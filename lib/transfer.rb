@@ -12,7 +12,7 @@ class Transfer
   end 
   
   def valid?
-    @sender.valid? && @receiver.valid? && self.status != "complete"
+    sender.valid? && receiver.valid? && !insufficient_funds?
   end
   
   def insufficient_funds?
