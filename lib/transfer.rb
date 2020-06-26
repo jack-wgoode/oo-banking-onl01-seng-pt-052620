@@ -33,6 +33,7 @@ class Transfer
      return if self.status == "pending"
      @sender.deposit(amount)
      @receiver.withdraw(amount)
+     self.status = "reversed"
    end
   
 end
