@@ -23,7 +23,7 @@ class Transfer
        self.receiver.deposit(amount)
        self.status = "complete"
        @@all << self
-     elsif self.insufficient_funds? 
+     else 
      self.status = "rejected"
      "Transaction rejected. Please check your account balance."
     end
