@@ -27,6 +27,12 @@ class Transfer
       @receiver.deposit(amount)
       self.status = "complete"
      end
-   end    
+   end 
+   
+   def reverse_transfer
+     return if self.status == "pending"
+     @sender.deposit(amount)
+     @receiver.withdraw(amount)
+   end
   
 end
