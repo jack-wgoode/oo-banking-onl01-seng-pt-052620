@@ -18,7 +18,9 @@ class Transfer
   
   
   def execute_transaction 
-    if self.valid?
+    return if self.status == "complete"
+    if !self.valid? 
+      
       
      else 
      self.status = "rejected"
