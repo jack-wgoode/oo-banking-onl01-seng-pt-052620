@@ -16,7 +16,7 @@ class Transfer
   end
   
   def insufficient_funds?
-    self.valid? && @sender.balance >= self.amount
+    valid? && @sender.balance >= self.amount
   end
   
   def execute_transaction 
