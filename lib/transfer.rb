@@ -18,11 +18,8 @@ class Transfer
   
   
   def execute_transaction 
-    if self.valid? && self.status == "pending"
-       self.sender.withdraw(amount)
-       self.receiver.deposit(amount)
-       self.status = "complete"
-       @@all << self
+    if self.valid?
+      
      else 
      self.status = "rejected"
      "Transaction rejected. Please check your account balance."
