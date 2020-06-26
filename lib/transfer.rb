@@ -12,12 +12,10 @@ class Transfer
   end 
   
   def valid?
-    @sender.valid? && @receiver.valid? && !self.insufficient_funds?
+    @sender.valid? && @receiver.valid? && @sender.balance > amount
   end
   
-  def insufficient_funds?
-    valid? && @sender.balance >= self.amount
-  end
+  
   
   def execute_transaction 
     if self.valid? && self.status == "pending"
